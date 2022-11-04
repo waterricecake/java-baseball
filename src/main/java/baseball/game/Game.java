@@ -5,16 +5,19 @@ import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Game {
-    private static List<Integer> userNumbers;
-    private static List<Integer> computerNumbers;
+import static baseball.game.Options.COUNT_BALL;
 
-    private static Integer ball;
-    private static Integer strike;
+public class Game {
+    public static List<Integer> userNumbers;
+    public static List<Integer> computerNumbers;
+
+    public static Integer ball;
+    public static Integer strike;
 
 
     public Game(){
         makeRandomNumbers();
+        System.out.println(computerNumbers);
     }
     private static void makeRandomNumbers(){
         computerNumbers = new ArrayList<>();
@@ -23,6 +26,13 @@ public class Game {
             if(!computerNumbers.contains(randomNumber)){
                 computerNumbers.add(randomNumber);
             }
+        }
+    }
+
+    public static void setUserNumber(String input){
+        userNumbers = new ArrayList<>();
+        for(int i = 0;i<COUNT_BALL;i++){
+            userNumbers.add(Character.getNumericValue(input.charAt(i)));
         }
     }
 }

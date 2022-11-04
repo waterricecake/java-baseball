@@ -3,8 +3,8 @@ package baseball.view;
 import java.util.Scanner;
 
 public class InputView {
-    public static String inputView(Scanner scanner){
-        System.out.println("숫자를 입력해주세요 : ");
+    public static String inputNumbersView(Scanner scanner){
+        System.out.print("숫자를 입력해주세요 : ");
         return scanner.nextLine();
     }
 
