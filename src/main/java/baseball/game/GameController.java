@@ -9,6 +9,7 @@ import java.util.Scanner;
 import static baseball.game.Game.*;
 import static baseball.game.Options.COUNT_BALL;
 import static baseball.game.Options.RESTART;
+import static baseball.game.exception.ExceptionCase.catchWrongOrderRestartException;
 import static baseball.view.InputView.inputRestartView;
 import static baseball.view.OutputView.*;
 
@@ -27,6 +28,7 @@ public class GameController {
     }
     private static void restart(Scanner scanner){
         String input = inputRestartView(scanner);
+        catchWrongOrderRestartException(input);
         if(input.equals(RESTART)){
             start(scanner);
         }

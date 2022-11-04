@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static baseball.game.Options.COUNT_BALL;
+import static baseball.game.exception.ExceptionCase.catchOutOfRangeException;
+import static baseball.game.exception.ExceptionCase.catchSizeException;
 
 public class Game {
     public static List<Integer> userNumbers;
@@ -31,8 +33,12 @@ public class Game {
 
     public static void setUserNumber(String input){
         userNumbers = new ArrayList<>();
+        int number;
+        catchSizeException(input);
         for(int i = 0;i<COUNT_BALL;i++){
-            userNumbers.add(Character.getNumericValue(input.charAt(i)));
+            number = Character.getNumericValue(input.charAt(i));
+            catchOutOfRangeException(number);
+            userNumbers.add(number);
         }
     }
 }
