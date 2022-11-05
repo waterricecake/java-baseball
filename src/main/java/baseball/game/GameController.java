@@ -10,11 +10,13 @@ import static baseball.game.Options.COUNT_BALL;
 import static baseball.game.Options.RESTART;
 import static baseball.game.exception.ExceptionCase.catchWrongOrderRestartException;
 import static baseball.view.InputView.inputRestartView;
+import static baseball.view.InputView.startProgramView;
 import static baseball.view.OutputView.*;
 
 
 public class GameController {
     public static void start(Scanner scanner){
+        startProgramView();
         Game game = new Game();
         playGame(scanner);
     }
