@@ -14,7 +14,6 @@ import static baseball.view.OutputView.*;
 
 
 public class GameController {
-    static List<Integer> count;
     public static void start(Scanner scanner){
         Game game = new Game();
         playGame(scanner);

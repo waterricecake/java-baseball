@@ -10,7 +10,6 @@ import java.util.Set;
 import static baseball.game.Game.*;
 import static baseball.game.Options.COUNT_BALL;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class GameTest {
 
