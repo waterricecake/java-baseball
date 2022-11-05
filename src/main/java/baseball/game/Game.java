@@ -36,9 +36,13 @@ public class Game {
         catchSizeException(input);
         for(int i = 0;i<COUNT_BALL;i++){
             number = Character.getNumericValue(input.charAt(i));
-            catchOutOfRangeException(number);
-            catchDuplicatedNumberException(number);
+            catchExcept(number);
             userNumbers.add(number);
         }
+    }
+
+    private static void catchExcept(int number){
+        catchOutOfRangeException(number);
+        catchDuplicatedNumberException(number);
     }
 }
