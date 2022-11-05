@@ -1,5 +1,6 @@
 package baseball.game.exception;
 
+import static baseball.game.Game.userNumbers;
 import static baseball.game.Options.*;
 
 public class ExceptionCase {
@@ -22,6 +23,12 @@ public class ExceptionCase {
     public static void catchWrongOrderRestartException(String input){
         if(!input.equals(RESTART)&!input.equals(END)){
             throwException(RESTART+"나 "+END+"를 입력하시오");
+        }
+    }
+
+    public static void catchDuplicatedNumberException(Integer number){
+        if(userNumbers.contains(number)){
+            throwException("서로 다른 숫자를 입력해야합니다.");
         }
     }
 }
