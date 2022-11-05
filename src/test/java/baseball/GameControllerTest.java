@@ -8,13 +8,23 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class GameControllerTest extends NsTest {
     @Test
-    void GameTest() {
+    void gameTest() {
         assertRandomNumberInRangeTest(
                 () -> {
                     run("145","123","2");
                     assertThat(output()).contains("스트라이크");
                 },
                 1, 2,3
+        );
+    }
+    @Test
+    void restartTest(){
+        assertRandomNumberInRangeTest(
+                () -> {
+                    run("145","123","1","123","2");
+                    assertThat(output()).contains("스트라이크");
+                },
+                1, 2,3,1,2,3
         );
     }
     @Override
