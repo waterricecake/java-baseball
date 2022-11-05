@@ -22,7 +22,7 @@ public class GameTest {
     }
 
     @Test
-    void makeRandomNumbersTest(){
+    void makeRandomNumbersTest() {
         Game game = new Game();
         Set<Integer> result = Sets.newHashSet(computerNumbers);
         assertThat(result.size()).isEqualTo(COUNT_BALL);

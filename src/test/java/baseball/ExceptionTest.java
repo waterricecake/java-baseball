@@ -35,6 +35,13 @@ public class ExceptionTest extends NsTest {
         );
     }
 
+    @Test
+    void catchDuplicatedNumberExceptionTest() {
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException("111"))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
     @Override
     protected void runMain() {
         Application.main(new String[]{});
