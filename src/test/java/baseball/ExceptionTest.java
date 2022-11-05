@@ -34,7 +34,6 @@ public class ExceptionTest extends NsTest {
                 1,2,3
         );
     }
-
     @Test
     void catchDuplicatedNumberExceptionTest() {
         assertSimpleTest(() ->
