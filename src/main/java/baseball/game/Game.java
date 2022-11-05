@@ -18,7 +18,6 @@ public class Game {
 
     public Game(){
         makeRandomNumbers();
-        System.out.println(computerNumbers);
     }
     private static void makeRandomNumbers(){
         computerNumbers = new ArrayList<>();
