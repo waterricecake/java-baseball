@@ -5,14 +5,19 @@ import org.junit.jupiter.api.Test;
 
 import static camp.nextstep.edu.missionutils.test.Assertions.assertRandomNumberInRangeTest;
 import static camp.nextstep.edu.missionutils.test.Assertions.assertSimpleTest;
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class ExceptionTest extends NsTest {
     @Test
-    void catchSizeExceptionTest() {
+    void catchMoreInputExceptionTest() {
         assertSimpleTest(() ->
                 assertThatThrownBy(() -> runException("1234"))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+    }    @Test
+    void catchLessInputExceptionTest() {
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException("12"))
                         .isInstanceOf(IllegalArgumentException.class)
         );
     }
@@ -20,6 +25,13 @@ public class ExceptionTest extends NsTest {
     void catchOutOfRangeExceptionTest() {
         assertSimpleTest(() ->
                 assertThatThrownBy(() -> runException("012"))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
+    @Test
+    void catchNotNumberExceptionTest() {
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException("a12"))
                         .isInstanceOf(IllegalArgumentException.class)
         );
     }
